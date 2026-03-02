@@ -1,16 +1,16 @@
 # Hackathon Project - Main Application
-# Modified by PERSON1 - Added Login Feature
+# Modified by PERSON2 - Added Logout Feature
 
 def calculate_score(points):
     """Calculate user score"""
     return points * 10
 
-def login(username, password):
-    """PERSON1: Login feature"""
-    print("\n🔐 LOGIN FEATURE (by Person1)")
-    print(f"Username: {username}")
-    print(f"Password: {'*' * len(password)}")
-    print("✅ Login successful!")
+def logout(username):
+    """PERSON2: Logout feature"""
+    print("\n🚪 LOGOUT FEATURE (by Person2)")
+    print(f"User: {username}")
+    print("✅ Logged out successfully!")
+    print("Session ended.")
     return True
 
 def display_menu():
@@ -25,12 +25,12 @@ def display_menu():
 
 def main():
     print("Welcome to Hackathon Project!")
-    print("Version: 1.0 + Person1 Login")
+    print("Version: 1.0 + Person2 Logout")
     print("Status: Ready for modifications")
     print()
     
-    # PERSON1's addition - Login feature
-    login("person1", "pass123")
+    # PERSON2's addition - Logout feature
+    logout("person2")
     
     display_menu()
     score = calculate_score(5)
