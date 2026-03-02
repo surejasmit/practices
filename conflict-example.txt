@@ -1,0 +1,52 @@
+# What a Merge Conflict Looks Like
+
+When you run `git merge origin/main` and there's a conflict, 
+your file will look like this:
+
+```
+def calculate_score(points):
+<<<<<<< HEAD
+    # Your code
+    return points * 2
+=======
+    # Authority's code or another student's code
+    return points * 3 + 10
+>>>>>>> origin/main
+```
+
+## How to Fix It:
+
+1. **Understand both changes**
+   - Above ======= is YOUR code
+   - Below ======= is THEIR code (from main)
+
+2. **Decide what to keep**
+   - Keep yours only
+   - Keep theirs only
+   - Combine both (if possible)
+
+3. **Edit the file** to look like this:
+```
+def calculate_score(points):
+    # Combined solution
+    return points * 3 + 10
+```
+
+4. **Remove all conflict markers** (<<<, ===, >>>)
+
+5. **Save, add, commit, push**
+```bash
+git add conflict-file.py
+git commit -m "fix: resolve merge conflict in calculate_score"
+git push origin your-branch
+```
+
+## Prevention is Better!
+
+Sync with main daily:
+```bash
+git fetch origin
+git merge origin/main
+```
+
+Do this BEFORE you start coding each day!
